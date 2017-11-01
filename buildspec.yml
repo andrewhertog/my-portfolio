@@ -1,0 +1,12 @@
+version: 0.2
+
+phase:
+  build:
+    - echo "nothing to do yet"
+
+artifacts:
+  files:
+    - index.html
+    - favicon.ico
+    - styles/main.css
+    - images/*
