@@ -57,3 +57,7 @@ typings/
 # dotenv environment variables file
 .env
 
+
+
+# Ignore DevSpace cache and log folder
+.devspace/
