@@ -1,29 +1,58 @@
 {
-  "name": "my-portfolio",
-  "version": "1.0.0",
-  "description": "My Professional Serverless Portfolio",
-  "main": "index.js",
+  "name": "denhertog.ca",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build --debug",
+    "start": "next start",
+    "fmt": "pnpm rome check . --apply-suggested && pnpm rome format . --write"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/andrewhertog/my-portfolio.git"
-  },
-  "author": "Andrew den Hertog",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/andrewhertog/my-portfolio/issues"
-  },
-  "homepage": "https://github.com/andrewhertog/my-portfolio#readme",
   "dependencies": {
-    "react": "^16.1.1",
-    "react-dom": "^16.1.1"
+    "@next/font": "^13.4.3",
+    "@next/mdx": "^13.4.3",
+    "@types/gtag.js": "^0.0.14",
+    "@types/node": "20.2.1",
+    "@types/react": "18.2.6",
+    "@types/react-dom": "18.2.4",
+    "contentlayer": "^0.3.0",
+    "framer-motion": "^10.12.12",
+    "lucide-react": "^0.220.0",
+    "markdown-wasm": "^1.2.0",
+    "next": "13.4.3",
+    "next-contentlayer": "^0.3.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-wrap-balancer": "^0.5.0",
+    "redis": "^4.6.10",
+    "rehype-autolink-headings": "^6.1.1",
+    "rehype-pretty-code": "^0.9.4",
+    "rehype-slug": "^5.1.0",
+    "remark-gfm": "^3.0.1",
+    "typescript": "5.0.4"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-react": "^6.24.1",
-    "webpack": "^3.8.1"
+    "@opentelemetry/api": "^1.4.1",
+    "@tailwindcss/line-clamp": "^0.4.2",
+    "@tailwindcss/typography": "^0.5.9",
+    "autoprefixer": "^10.4.13",
+    "eslint": "8.51.0",
+    "eslint-config-next": "13.5.5",
+    "postcss": "^8.4.21",
+    "postcss-nesting": "^11.2.2",
+    "rome": "^11.0.0",
+    "tailwindcss": "^3.2.7",
+    "tailwindcss-debug-screens": "^2.2.1"
+  },
+  "pnpm": {
+    "overrides": {
+      "@opentelemetry/api": "1.4.1",
+      "@opentelemetry/core": "1.13.0",
+      "@opentelemetry/exporter-trace-otlp-grpc": "0.39.1",
+      "@opentelemetry/resources": "1.13.0",
+      "@opentelemetry/sdk-trace-base": "1.13.0",
+      "@opentelemetry/sdk-trace-node": "1.13.0",
+      "@opentelemetry/semantic-conventions": "1.13.0"
+    }
   }
 }
