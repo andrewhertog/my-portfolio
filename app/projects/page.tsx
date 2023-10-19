@@ -5,7 +5,6 @@ import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
 import { Article } from "./article";
 
-
 export const revalidate = 60;
 export default async function ProjectsPage() {
 	const featured = allProjects.find((project) => project.slug === "prodigy")!;

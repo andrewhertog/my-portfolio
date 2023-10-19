@@ -57,7 +57,7 @@ typings/
 # dotenv environment variables file
 .env
 
-
+.DS_Store
 
 # Ignore DevSpace cache and log folder
 .devspace/

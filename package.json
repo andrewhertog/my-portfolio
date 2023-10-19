@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --debug",
     "start": "next start",
     "fmt": "pnpm rome check . --apply-suggested && pnpm rome format . --write"
   },
@@ -36,6 +36,8 @@
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.9",
     "autoprefixer": "^10.4.13",
+    "eslint": "8.51.0",
+    "eslint-config-next": "13.5.5",
     "postcss": "^8.4.21",
     "postcss-nesting": "^11.2.2",
     "rome": "^11.0.0",

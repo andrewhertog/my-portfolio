@@ -13,6 +13,5 @@ export default async function incr(req: NextRequest): Promise<NextResponse> {
 	}
 
 	const body = await req.json();
-	;
 	return new NextResponse(null, { status: 202 });
 }
