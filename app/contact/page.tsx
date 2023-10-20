@@ -1,4 +1,3 @@
-"use client";
 import { Github, Mail, Twitter } from "lucide-react";
 import Link from "next/link";
 import { Navigation } from "../components/nav";
@@ -37,7 +36,8 @@ export default function Example() {
 			<div className="container flex items-center justify-center min-h-screen px-4 mx-auto">
 				<div className="grid w-full grid-cols-1 gap-8 mx-auto mt-32 sm:mt-0 sm:grid-cols-3 lg:gap-16">
 					{socials.map((s) => (
-						<Card>
+						// eslint-disable-next-line react/jsx-key
+						<Card >
 							<Link
 								href={s.href}
 								target="_blank"
