@@ -4,12 +4,16 @@ import { allProjects } from "contentlayer/generated";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
 import { Article } from "./article";
-
+import { Metadata } from 'next'
+ 
+export const metadata: Metadata = {
+  title: 'Projects',
+}
 export const revalidate = 60;
 export default async function ProjectsPage() {
 	const featured = allProjects.find((project) => project.slug === "prodigy")!;
 	const top2 = allProjects.find((project) => project.slug === "scalepoynt")!;
-	const top3 = allProjects.find((project) => project.slug === "opensource")!;
+	const top3 = allProjects.find((project) => project.slug === "denhertog.ca")!;
 	const sorted = allProjects
 		.filter((p) => p.published)
 		.filter(

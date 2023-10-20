@@ -1,7 +1,12 @@
 import Link from "next/link";
 import React from "react";
 import Particles from "./components/particles";
-
+import { Metadata } from 'next'
+ 
+export const metadata: Metadata = {
+  title: 'Home',
+}
+ 
 const navigation = [
 	{ name: "Projects", href: "/projects" },
 	{ name: "Contact", href: "/contact" },
