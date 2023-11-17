@@ -1,10 +1,14 @@
 "use client";
 import Script from "next/script";
+import {  getCookieConsentValue } from "react-cookie-consent";
 
 export function Analytics() {
 	const token = process.env.NEXT_PUBLIC_GA4_TRACKING_ID;
 	const src = `${token}`;
 	if (!token) {
+		return null;
+	}
+	if (getCookieConsentValue() !== "true") {
 		return null;
 	}
 	return (
