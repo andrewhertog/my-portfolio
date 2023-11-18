@@ -44,6 +44,7 @@ export default async function Blog() {
 					</p>
 				</div>
                 {items.map((item: any) => (
+        			// eslint-disable-next-line react/jsx-key
                     <Card>
                         <Article details={item}>
                         </Article>
