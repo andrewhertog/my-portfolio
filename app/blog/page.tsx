@@ -1,9 +1,10 @@
 import { Navigation } from "../components/nav";
 import { Metadata } from 'next'
 import { Card } from  '../components/card'
-import parse, { HTMLReactParserOptions } from 'html-react-parser';
+import { HTMLReactParserOptions, Element } from 'html-react-parser';
 import Link from "next/link";
 
+const parse = require('html-react-parser').default;
 var xml2js = require("xml2js");
 export const metadata: Metadata = {
     title: 'Blog',
@@ -57,14 +58,14 @@ export default async function Blog() {
 
 
 const htmlParseOptions : HTMLReactParserOptions = {
-    replace({attribs, children}) {
-        if (!attribs) {
+    replace(domNode) {
+        if (!(domNode as Element).attribs) {
             return;
         }
-        if (attribs.class === "medium-feed-image") {
+        if ((domNode as Element).attribs.class === "medium-feed-image") {
             return <></>;
         }
-        if (attribs.class === "medium-feed-link") {
+        if ((domNode as Element).attribs.class === "medium-feed-link") {
             return <></>;
         }
     },
