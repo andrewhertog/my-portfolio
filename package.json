@@ -2,11 +2,12 @@
   "name": "denhertog.ca",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "npm@10.8.2",
   "scripts": {
     "dev": "next dev",
     "build": "next build --debug",
     "start": "next start",
-    "fmt": "pnpm rome check . --apply-suggested && pnpm rome format . --write"
+    "fmt": "npm run rome check . --apply-suggested && npm run rome format . --write"
   },
   "dependencies": {
     "@next/font": "^13.4.3",
@@ -46,16 +47,5 @@
     "rome": "^11.0.0",
     "tailwindcss": "^3.2.7",
     "tailwindcss-debug-screens": "^2.2.1"
-  },
-  "pnpm": {
-    "overrides": {
-      "@opentelemetry/api": "1.4.1",
-      "@opentelemetry/core": "1.13.0",
-      "@opentelemetry/exporter-trace-otlp-grpc": "0.39.1",
-      "@opentelemetry/resources": "1.13.0",
-      "@opentelemetry/sdk-trace-base": "1.13.0",
-      "@opentelemetry/sdk-trace-node": "1.13.0",
-      "@opentelemetry/semantic-conventions": "1.13.0"
-    }
   }
 }
