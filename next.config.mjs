@@ -1,4 +1,4 @@
-import { withContentlayer } from "next-contentlayer2/dist/index.js";
+import { withContentlayer } from "next-contentlayer2";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
