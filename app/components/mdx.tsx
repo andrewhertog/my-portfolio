@@ -2,7 +2,7 @@
 import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useMDXComponent } from "next-contentlayer/hooks";
+import { getMDXComponent } from "next-contentlayer2/hooks";
 
 function clsx(...args: any) {
 	return args.filter(Boolean).join(" ");
@@ -168,7 +168,7 @@ interface MdxProps {
 }
 
 export function Mdx({ code }: MdxProps) {
-	const Component = useMDXComponent(code);
+	const Component = React.useMemo(() => getMDXComponent(code), [code]);
 
 	return (
 		<div className="mdx">
