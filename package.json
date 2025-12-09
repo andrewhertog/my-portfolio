@@ -31,6 +31,7 @@
     "rehype-autolink-headings": "^6.1.1",
     "rehype-pretty-code": "^0.14.1",
     "rehype-slug": "^5.1.0",
+    "shiki": "^1.0.0",
     "remark-gfm": "^3.0.1",
     "typescript": "5.0.4",
     "xml2js": "^0.6.2"
