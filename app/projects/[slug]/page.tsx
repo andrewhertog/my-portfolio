@@ -8,23 +8,21 @@ import { Metadata, ResolvingMetadata } from 'next'
 export const revalidate = 60;
 
 type Props = {
-	params: {
-		slug: string;
-	};
+	params: Promise<{ slug: string }>;
 };
 
 export async function generateMetadata(
 	{ params }: Props,
 	parent: ResolvingMetadata
   ): Promise<Metadata> {
-   
-	const title = params.slug
+
+	const { slug } = await params;
 	return {
-	  title: title.charAt(0).toUpperCase() + title.slice(1),
+	  title: slug.charAt(0).toUpperCase() + slug.slice(1),
 	}
   }
 
-export async function generateStaticParams(): Promise<Props["params"][]> {
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
 	return allProjects
 		.filter((p) => p.published)
 		.map((p) => ({
@@ -33,7 +31,7 @@ export async function generateStaticParams(): Promise<Props["params"][]> {
 }
 
 export default async function PostPage({ params }: Props) {
-	const slug = params?.slug;
+	const { slug } = await params;
 	const project = allProjects.find((project) => project.slug === slug);
 
 	if (!project) {

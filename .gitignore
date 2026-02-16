@@ -64,3 +64,5 @@ typings/
 
 .contentlayer/
 .next/
+# Local Netlify folder
+.netlify
