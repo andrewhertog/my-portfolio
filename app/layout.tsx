@@ -6,12 +6,16 @@ import { Analytics } from "./components/analytics";
 import { Consent } from "./components/consent"
 
 export const metadata: Metadata = {
+	metadataBase: new URL("https://denhertog.ca"),
 	title: {
 		default: "denhertog.ca",
 		template: "%s | denhertog.ca",
 	},
 	description:
 		"Staff Site Reliability Engineer at Prodigy Education and Scalepoynt",
+	alternates: {
+		canonical: "/",
+	},
 	openGraph: {
 		title: "denhertog.ca",
 		description:
@@ -64,7 +68,21 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
-			<head></head>
+			<head>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify({
+							"@context": "https://schema.org",
+							"@type": "Person",
+							name: "Andrew den Hertog",
+							url: "https://denhertog.ca",
+							jobTitle: "Staff Site Reliability Engineer",
+							sameAs: ["https://twitter.com/adh88ca"],
+						}),
+					}}
+				/>
+			</head>
 			<body
 				className={`bg-black ${
 					process.env.NODE_ENV === "development" ? "debug-screens" : undefined
