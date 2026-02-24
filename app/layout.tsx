@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import { Metadata } from "next";
 import { Analytics } from "./components/analytics";
+import { Consent } from "./components/consent";
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://denhertog.ca"),
@@ -88,6 +89,7 @@ export default function RootLayout({
 				}`}
 			>
 				<Analytics />
+				<Consent />
 				{children}
 			</body>
 		</html>
