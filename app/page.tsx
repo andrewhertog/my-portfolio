@@ -9,6 +9,7 @@ export const metadata: Metadata = {
  
 const navigation = [
 	{ name: "Projects", href: "/projects" },
+	{ name: "Skills", href: "/skills" },
 	{ name: "Blog", href: "/blog"},
 	{ name: "Contact", href: "/contact" },
 ];
@@ -62,6 +63,23 @@ export default function Home() {
 					</Link>{" "}
 					at on the side.
 				</h2>
+				<p className="mt-4 text-xs text-zinc-600">
+					<Link href="/skills" className="duration-500 hover:text-zinc-300">
+						Cloud & Infrastructure
+					</Link>
+					{" / "}
+					<Link href="/skills" className="duration-500 hover:text-zinc-300">
+						Orchestration & Runtime
+					</Link>
+					{" / "}
+					<Link href="/skills" className="duration-500 hover:text-zinc-300">
+						CI/CD & DevOps
+					</Link>
+					{" / "}
+					<Link href="/skills" className="duration-500 hover:text-zinc-300">
+						Observability & SRE
+					</Link>
+				</p>
 			</div>
 		</div>
 	);
