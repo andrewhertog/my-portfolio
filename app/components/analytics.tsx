@@ -7,20 +7,20 @@ import { getCookieConsentValue } from "react-cookie-consent";
 import { GA_TRACKING_ID, pageview } from "../lib/gtag";
 
 function AnalyticsInner() {
-	const [hasConsent, setHasConsent] = useState(false);
+	const [hasConsent, setHasConsent] = useState(true);
 	const pathname = usePathname();
 	const searchParams = useSearchParams();
 
-	// Check consent on mount (returning visitors) and listen for new consent
+	// If the user has explicitly declined, disable analytics
 	useEffect(() => {
-		if (getCookieConsentValue() === "true") {
-			setHasConsent(true);
+		if (getCookieConsentValue() === "false") {
+			setHasConsent(false);
 		}
 
-		const onConsent = () => setHasConsent(true);
-		window.addEventListener("cookie-consent-accepted", onConsent);
+		const onDeny = () => setHasConsent(false);
+		window.addEventListener("cookie-consent-denied", onDeny);
 		return () =>
-			window.removeEventListener("cookie-consent-accepted", onConsent);
+			window.removeEventListener("cookie-consent-denied", onDeny);
 	}, []);
 
 	// Track client-side navigations

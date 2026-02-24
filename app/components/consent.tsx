@@ -4,8 +4,9 @@ import CookieConsent from "react-cookie-consent";
 export function Consent() {
     return (
         <CookieConsent
-            onAccept={() => {
-                window.dispatchEvent(new Event("cookie-consent-accepted"));
+            enableDeclineButton
+            onDecline={() => {
+                window.dispatchEvent(new Event("cookie-consent-denied"));
             }}
         >
         This website uses cookies for analytics.
