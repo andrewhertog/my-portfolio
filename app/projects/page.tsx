@@ -9,7 +9,7 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Projects',
 }
-export const revalidate = 60;
+export const revalidate = 3600;
 export default async function ProjectsPage() {
 	const featured = allProjects.find((project) => project.slug === "frontier-rnd")!;
 	const top2 = allProjects.find((project) => project.slug === "prodigy")!;
