@@ -1,13 +1,13 @@
 import { Github, Mail, Twitter } from "lucide-react";
-import Link from "next/link";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
+import { ContactLink } from "./contact-link";
 import { Metadata } from 'next'
- 
+
 export const metadata: Metadata = {
   title: 'Contact',
 }
- 
+
 const socials = [
 	{
 		icon: <Twitter size={20} />,
@@ -38,9 +38,9 @@ export default function Example() {
 					{socials.map((s) => (
 						// eslint-disable-next-line react/jsx-key
 						<Card >
-							<Link
+							<ContactLink
 								href={s.href}
-								target="_blank"
+								label={s.label}
 								className="p-4 relative flex flex-col items-center gap-4 duration-700 group md:gap-8 md:py-24  lg:pb-48  md:p-16"
 							>
 								<span
@@ -58,7 +58,7 @@ export default function Example() {
 										{s.label}
 									</span>
 								</div>
-							</Link>
+							</ContactLink>
 						</Card>
 					))}
 				</div>
