@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 }
  
 const navigation = [
+	{ name: "About", href: "/about" },
 	{ name: "Projects", href: "/projects" },
 	{ name: "Contact", href: "/contact" },
 ];
@@ -28,7 +29,7 @@ export default function Home() {
 					))}
 				</ul>
 			</nav>
-			<div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
+			<div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-amber-300/0 via-amber-200/40 to-amber-300/0" />
 			<Particles
 				className="absolute inset-0 -z-10 animate-fade-in"
 				quantity={100}
@@ -37,11 +38,10 @@ export default function Home() {
 				denHertog.ca
 			</h1>
 
-			<div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
+			<div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-amber-300/0 via-amber-200/40 to-amber-300/0" />
 			<div className="my-16 text-center animate-fade-in">
 				<h2 className="text-sm text-zinc-500 ">
-					Hi, my name is Andrew, I&apos;m building and maintaining the kubernetes
-					infrastructure at{" "}
+					Staff SRE building resilient Kubernetes platforms on AWS at{" "}
 					<Link
 						target="_blank"
 						href="https://www.prodigygame.com"
@@ -49,17 +49,15 @@ export default function Home() {
 					>
 						Prodigy Education
 					</Link>
-
-					<br />
-					and consulting with{" "}
+					{" "}— and helping startups scale their cloud infrastructure via{" "}
 					<Link
 						target="_blank"
 						href="https://www.scalepoynt.io"
 						className="underline duration-500 hover:text-zinc-300"
 					>
 						scalepoynt.io
-					</Link>{" "}
-					at on the side.
+					</Link>
+					.
 				</h2>
 			</div>
 		</div>

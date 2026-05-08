@@ -25,6 +25,9 @@ export const Project = defineDocumentType(() => ({
 		published: {
 			type: "boolean",
 		},
+		featured: {
+			type: "boolean",
+		},
 		title: {
 			type: "string",
 			required: true,
@@ -41,6 +44,10 @@ export const Project = defineDocumentType(() => ({
 		},
 		repository: {
 			type: "string",
+		},
+		tags: {
+			type: "list",
+			of: { type: "string" },
 		},
 	},
 	computedFields,

@@ -1,13 +1,13 @@
-import { Github, Mail, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 import Link from "next/link";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
 import { Metadata } from 'next'
- 
+
 export const metadata: Metadata = {
   title: 'Contact',
 }
- 
+
 const socials = [
 	{
 		icon: <Twitter size={20} />,
@@ -20,6 +20,12 @@ const socials = [
 		href: "mailto:web@denhertog.ca",
 		label: "Email",
 		handle: "web@denhertog.ca",
+	},
+	{
+		icon: <Linkedin size={20} />,
+		href: "https://www.linkedin.com/in/adh88ca/",
+		label: "LinkedIn",
+		handle: "andrewhertog",
 	},
 	{
 		icon: <Github size={20} />,

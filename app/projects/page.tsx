@@ -11,22 +11,21 @@ export const metadata: Metadata = {
 }
 export const revalidate = 60;
 export default async function ProjectsPage() {
-	const featured = allProjects.find((project) => project.slug === "prodigy")!;
-	const top2 = allProjects.find((project) => project.slug === "scalepoynt")!;
-	const top3 = allProjects.find((project) => project.slug === "denhertog.ca")!;
-	const sorted = allProjects
+	const featured = (
+		allProjects.find((project) => project.featured && project.published)
+		?? allProjects.find((project) => project.published)
+	)!;
+	const remaining = allProjects
 		.filter((p) => p.published)
-		.filter(
-			(project) =>
-				project.slug !== featured.slug &&
-				project.slug !== top2.slug &&
-				project.slug !== top3.slug,
-		)
+		.filter((p) => p.slug !== featured.slug)
 		.sort(
 			(a, b) =>
 				new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
 				new Date(a.date ?? Number.POSITIVE_INFINITY).getTime(),
 		);
+	const top2 = remaining[0]!;
+	const top3 = remaining[1]!;
+	const sorted = remaining.slice(2);
 
 	return (
 		<div className="relative pb-16">
@@ -37,7 +36,7 @@ export default async function ProjectsPage() {
 						Projects
 					</h2>
 					<p className="mt-4 text-zinc-400">
-						Some of the projects are from work and some are on my own time.
+						Infrastructure, open source, and consulting work — mostly cloud-native, mostly AWS.
 					</p>
 				</div>
 				<div className="w-full h-px bg-zinc-800" />
