@@ -21,6 +21,7 @@ export async function generateMetadata(
 	const title = params.slug
 	return {
 	  title: title.charAt(0).toUpperCase() + title.slice(1),
+	  alternates: { canonical: `/projects/${params.slug}` },
 	}
   }
 

@@ -7,6 +7,7 @@ import Link from "next/link";
 const parse = require('html-react-parser').default;
 var xml2js = require("xml2js");
 export const metadata: Metadata = {
+	alternates: { canonical: "/blog" },
     title: 'Blog',
 }
 
@@ -94,9 +95,9 @@ function Article(details: any) {
                         {item.pubDate[0]}
                     </div>
                 </div>
-                <div className="mt-4 text-3xl font-bold text-zinc-100 group-hover:text-white sm:text-4xl font-display">
+                <h4 className="mt-4 text-3xl font-bold text-zinc-100 group-hover:text-white sm:text-4xl font-display">
                     {item.title[0]}
-                </div>
+                </h4>
                 <div className="mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
                     {parse(description,htmlParseOptions)}
                 </div>

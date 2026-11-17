@@ -6,6 +6,7 @@ import { Analytics } from "./components/analytics";
 import { Consent } from "./components/consent"
 
 export const metadata: Metadata = {
+	metadataBase: new URL("https://denhertog.ca"),
 	title: {
 		default: "denhertog.ca",
 		template: "%s | denhertog.ca",

@@ -5,6 +5,7 @@ import { Card } from "../components/card";
 import { Metadata } from 'next'
  
 export const metadata: Metadata = {
+	alternates: { canonical: "/contact" },
   title: 'Contact',
 }
  
