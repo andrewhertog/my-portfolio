@@ -133,7 +133,7 @@ export default function Home() {
 							Staff Site Reliability Engineer
 						</p>
 						<h1 className="max-w-[900px] font-display text-[clamp(2.75rem,6vw,5.25rem)] leading-[1.02] tracking-[-0.01em] text-zinc-50">
-							Infrastructure that holds up when 150,000 students log in at once.
+							Infrastructure that holds up with 150,000 students playing at once.
 						</h1>
 						<p className="max-w-[640px] text-[19px] leading-relaxed text-zinc-400">
 							I&apos;m Andrew den Hertog. I build and run the Kubernetes platform at{" "}
