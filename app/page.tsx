@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import Particles from "./components/particles";
 import { Metadata } from 'next'
+import { skillCategories } from "./skills/data";
  
 export const metadata: Metadata = {
 	alternates: { canonical: "/" },
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
  
 const navigation = [
 	{ name: "Projects", href: "/projects" },
+	{ name: "Skills", href: "/skills" },
 	{ name: "Blog", href: "/blog"},
 	{ name: "Contact", href: "/contact" },
 ];
@@ -63,6 +65,19 @@ export default function Home() {
 					</Link>{" "}
 					at on the side.
 				</h2>
+				<p className="mt-4 text-xs text-zinc-600">
+					{skillCategories.map((category, i) => (
+						<React.Fragment key={category.id}>
+							{i > 0 && " / "}
+							<Link
+								href={`/skills#${category.id}`}
+								className="duration-500 hover:text-zinc-300"
+							>
+								{category.title}
+							</Link>
+						</React.Fragment>
+					))}
+				</p>
 			</div>
 		</div>
 	);
