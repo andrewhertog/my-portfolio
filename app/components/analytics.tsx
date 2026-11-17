@@ -5,22 +5,27 @@ import { usePathname, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
 import { getCookieConsentValue } from "react-cookie-consent";
 import { GA_TRACKING_ID, pageview } from "../lib/gtag";
+import { CONSENT_ACCEPTED_EVENT, CONSENT_DENIED_EVENT } from "./consent";
 
 function AnalyticsInner() {
-	const [hasConsent, setHasConsent] = useState(true);
+	// Opt-in: analytics stays off until the visitor accepts.
+	const [hasConsent, setHasConsent] = useState(false);
 	const pathname = usePathname();
 	const searchParams = useSearchParams();
 
-	// If the user has explicitly declined, disable analytics
 	useEffect(() => {
-		if (getCookieConsentValue() === "false") {
-			setHasConsent(false);
+		if (getCookieConsentValue() === "true") {
+			setHasConsent(true);
 		}
 
+		const onAccept = () => setHasConsent(true);
 		const onDeny = () => setHasConsent(false);
-		window.addEventListener("cookie-consent-denied", onDeny);
-		return () =>
-			window.removeEventListener("cookie-consent-denied", onDeny);
+		window.addEventListener(CONSENT_ACCEPTED_EVENT, onAccept);
+		window.addEventListener(CONSENT_DENIED_EVENT, onDeny);
+		return () => {
+			window.removeEventListener(CONSENT_ACCEPTED_EVENT, onAccept);
+			window.removeEventListener(CONSENT_DENIED_EVENT, onDeny);
+		};
 	}, []);
 
 	// Track client-side navigations
