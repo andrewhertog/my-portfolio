@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { allProjects } from "contentlayer/generated";
+import { allProjects } from ".contentlayer/generated";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
 import { Article } from "./article";
@@ -10,11 +10,11 @@ export const metadata: Metadata = {
 	alternates: { canonical: "/projects" },
   title: 'Projects',
 }
-export const revalidate = 60;
+export const revalidate = 3600;
 export default async function ProjectsPage() {
-	const featured = allProjects.find((project) => project.slug === "prodigy")!;
-	const top2 = allProjects.find((project) => project.slug === "scalepoynt")!;
-	const top3 = allProjects.find((project) => project.slug === "denhertog.ca")!;
+	const featured = allProjects.find((project) => project.slug === "frontier-rnd")!;
+	const top2 = allProjects.find((project) => project.slug === "prodigy")!;
+	const top3 = allProjects.find((project) => project.slug === "scalepoynt")!;
 	const sorted = allProjects
 		.filter((p) => p.published)
 		.filter(

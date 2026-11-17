@@ -4,7 +4,7 @@ import {
 	useMotionTemplate,
 	useMotionValue,
 	useSpring,
-} from "framer-motion";
+} from "motion/react";
 
 import { MouseEventHandler, PropsWithChildren } from "react";
 

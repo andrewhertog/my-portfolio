@@ -1,9 +1,9 @@
 import "../global.css";
-import { Inter } from "@next/font/google";
-import LocalFont from "@next/font/local";
+import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import { Metadata } from "next";
 import { Analytics } from "./components/analytics";
-import { Consent } from "./components/consent"
+import { Consent } from "./components/consent";
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://denhertog.ca"),
@@ -13,6 +13,9 @@ export const metadata: Metadata = {
 	},
 	description:
 		"Staff Site Reliability Engineer at Prodigy Education and Scalepoynt",
+	alternates: {
+		canonical: "/",
+	},
 	openGraph: {
 		title: "denhertog.ca",
 		description:
@@ -53,7 +56,7 @@ const inter = Inter({
 	variable: "--font-inter",
 });
 
-const calSans = LocalFont({
+const calSans = localFont({
 	src: "../public/fonts/CalSans-SemiBold.ttf",
 	variable: "--font-calsans",
 });
@@ -65,14 +68,28 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
-			<head></head>
+			<head>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify({
+							"@context": "https://schema.org",
+							"@type": "Person",
+							name: "Andrew den Hertog",
+							url: "https://denhertog.ca",
+							jobTitle: "Staff Site Reliability Engineer",
+							sameAs: ["https://twitter.com/adh88ca"],
+						}),
+					}}
+				/>
+			</head>
 			<body
 				className={`bg-black ${
 					process.env.NODE_ENV === "development" ? "debug-screens" : undefined
 				}`}
 			>
-				<Consent />
 				<Analytics />
+				<Consent />
 				{children}
 			</body>
 		</html>

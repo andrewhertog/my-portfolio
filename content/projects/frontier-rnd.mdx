@@ -1,0 +1,22 @@
+---
+title: "Frontier R&D"
+description: Building and maintaining developer tools for Bible translation
+date: "2024-01-01"
+url: https://codexeditor.app
+repository: genesis-ai-dev/codex
+published: true
+---
+
+At Frontier R&D, I build and maintain developer tools that empower Bible translators around the world. My work spans three key projects:
+
+## Codex Editor
+
+I maintain a whitelabeled VSCode build ([genesis-ai-dev/codex](https://github.com/genesis-ai-dev/codex)) used as a platform for custom extensions for translating resources. This involves implementing Windows code signing and various patches to customize the editor into a tailored translation tool.
+
+## Web Codex
+
+I built a scalable Kubernetes platform ([genesis-ai-dev/web-codex](https://github.com/genesis-ai-dev/web-codex)) to host Codex Editor instances online, removing the requirement for local installation. This allows translators to access their workspace from any browser without needing to set up a local development environment.
+
+## Extension Sideloader
+
+I built a custom extension ([andrewhertog/extension-sideloader](https://github.com/andrewhertog/extension-sideloader)) into the Codex binary that automatically installs a specific set of extensions, eliminating the need to bundle them into the binary while providing a natural VSCode-like extension management experience.
