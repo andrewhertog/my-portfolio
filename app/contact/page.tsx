@@ -5,6 +5,7 @@ import { ContactLink } from "./contact-link";
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
+	alternates: { canonical: "/contact" },
   title: 'Contact',
 }
 

@@ -4,6 +4,7 @@ import Particles from "./components/particles";
 import { Metadata } from 'next'
  
 export const metadata: Metadata = {
+	alternates: { canonical: "/" },
   title: 'Home',
 }
  

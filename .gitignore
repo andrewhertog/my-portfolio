@@ -64,5 +64,9 @@ typings/
 
 .contentlayer/
 .next/
+# local tooling
+.claude/
+*.tsbuildinfo
+
 # Local Netlify folder
 .netlify

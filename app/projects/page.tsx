@@ -7,6 +7,7 @@ import { Article } from "./article";
 import { Metadata } from 'next'
  
 export const metadata: Metadata = {
+	alternates: { canonical: "/projects" },
   title: 'Projects',
 }
 export const revalidate = 3600;
