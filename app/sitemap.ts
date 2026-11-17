@@ -16,6 +16,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			priority: 0.9,
 		},
 		{
+			url: "https://denhertog.ca/skills",
+			lastModified: new Date(),
+			changeFrequency: "monthly",
+			priority: 0.8,
+		},
+		{
 			url: "https://denhertog.ca/blog",
 			lastModified: new Date(),
 			changeFrequency: "weekly",
