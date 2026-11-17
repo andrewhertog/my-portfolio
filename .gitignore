@@ -64,3 +64,6 @@ typings/
 
 .contentlayer/
 .next/
+# local tooling
+.claude/
+*.tsbuildinfo
